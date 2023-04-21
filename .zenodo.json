@@ -1,0 +1,24 @@
+{
+  "license": "Apache-2.0",
+  "title": "Program and models to calculate PSI from the sequence",
+  "version": "0-21-37",
+  "upload_type": "software",
+  "publication_date": "2023-04-21",
+  "language": "eng",
+  "description": '<p>Program to  calculate Protein Stability Index from the sequence. ML models were developed based on experimental stability datasets for a 24/23-mer covering the N-/C-terminus of the human proteome using the CatBoost regressor. The performance of the final models was evaluated using the testing set and an R2 coefficient, reaching the values of 0.796/0.812 for the N-terminus with initiator methionine cleaved/not cleaved, respectively, and 0.815 for the C-terminus (the highest possible value of R2 coefficient is 1). See the paper for details and the <a href="https://degronopedia.com/degronopedia/tutorial#ML">degronopedia tutorial</a>) for more information.</p>',
+  "notes": "This research was funded in part by the National Science Centre in Poland (grant number 2020/39/B/NZ2/03127 to F.S.)",
+  "keywords": ["bioinformatics", "PSI", "degrons", "machine learning", "catboost"],
+  "creators": [
+    {
+      "affiliation": "International Institute of Molecular and Cell Biology in Warsaw",
+      "name": "Natalia A. Szulc",
+      "orcid": "0000-0002-2991-3634"
+    },
+    {
+      "affiliation": "International Institute of Molecular and Cell Biology in Warsaw",
+      "name": "Filip Stefaniak",
+      "orcid": "0000-0001-5758-9416"
+    }
+  ],
+  "access_right": "open"
+}
