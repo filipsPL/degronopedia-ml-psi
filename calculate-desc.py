@@ -287,3 +287,5 @@ if __name__ == "__main__":
     logging.info("Predicting done.")
 
     print("Predicted PSI: %.2f" % (preds[0]))
+
+    exit(0)
