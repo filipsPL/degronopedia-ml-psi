@@ -22,7 +22,6 @@ import logging
 
 from catboost import CatBoostRegressor, Pool
 
-
 # sequence="MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDIEQWFTEDPGPDEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQKTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRT"
 
 columnSet = "^Whole_.*|^Ogryzek4_.*‎"
@@ -64,11 +63,12 @@ def selectColumnSubset(df, columnSet):
     outDf = df.filter(regex=(columnSet))
     return outDf
 
+
 def file_read(filename):
-  f = open(filename, 'r')
-  content = f.read()
-  f.close()
-  return content
+    f = open(filename, 'r')
+    content = f.read()
+    f.close()
+    return content
 
 
 def generate_ogryzki(sequence):
@@ -141,6 +141,7 @@ def aa_gravy(sequence, ogryzki):
     df_aa.index.name = 'Index'
 
     return df_aa
+
 
 def computeMorganFP(mol, depth=2, nBits=nBits):
     a = np.zeros(nBits, dtype=int)
@@ -215,21 +216,21 @@ def generate_ML_tsv(seq, ogryzki):
     return df_aa_ML
 
 
-
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description='Process some integers.')
 
-    parser.add_argument('--sequence', dest='inputFile', required=True,
-                    help='file with the sequence in plain text')
+    parser.add_argument('--sequence', dest='inputFile', required=True, help='file with the sequence in plain text')
 
-    parser.add_argument('--type', dest='type', required=True, choices=['C', 'NiMetNo', 'NiMetYes'],
-                    help='prediction type to make')
+    parser.add_argument('--type',
+                        dest='type',
+                        required=True,
+                        choices=['C', 'NiMetNo', 'NiMetYes'],
+                        help='prediction type to make')
 
     args = parser.parse_args()
     sequenceFile = args.inputFile
     type = args.type
-
 
     if type == 'C':
         print("C-terminus")
@@ -250,12 +251,10 @@ if __name__ == "__main__":
         print("Mission imposible")
         exit(2)
 
-
     # read sequence here
     f = open(sequenceFile, 'r')
     sequence = f.read().strip()
     f.close()
-
 
     if type == 'C':
         seq2 = sequence[-23:]
@@ -265,11 +264,11 @@ if __name__ == "__main__":
         seq2 = sequence[:23]
 
     try:
-        ogryzkiList = generate_ogryzki(sequence)  # currently, iMetNO/YES yields exactly the same descriptors - their values are identical
+        ogryzkiList = generate_ogryzki(
+            sequence)  # currently, iMetNO/YES yields exactly the same descriptors - their values are identical
 
     except Exception:
         ogryzkiList = [None, None]
-
 
     # input data with descriptors
     X = generate_ML_tsv(seq2, ogryzkiList[ogryzkiListNo])
@@ -277,16 +276,14 @@ if __name__ == "__main__":
     # set up the regressor
     reg = CatBoostRegressor()
 
-
     # read model file
     reg.load_model("models/%s" % (modelFile), format='cbm')
-
 
     # preds
     X = X[reg.feature_names_]
 
-    logging.info ("Predicting...")
+    logging.info("Predicting...")
     preds = reg.predict(X)
-    logging.info ("Predicting done.")
+    logging.info("Predicting done.")
 
     print("Predicted PSI: %.2f" % (preds[0]))
