@@ -1,0 +1,38 @@
+name: Install in conda env
+on:
+  push:
+    paths:
+    - '**.py'
+    - '.github/workflows/thefirst.yml'
+    - 'conda.yml'
+jobs:
+  build:
+    strategy:
+      matrix:
+        # os: ['ubuntu-18.04', 'ubuntu-20.04', 'macos-10.15', 'macos-11']
+        os: ['ubuntu-latest']
+        # python-version: [3.5, 3.7, 3.8, 3.9]
+        python-version: [3.8]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2.0.1
+        with:
+          auto-update-conda: true
+          auto-activate-base: false
+          miniconda-version: 'latest'
+          python-version: ${{ matrix.python-version }}
+          environment-file: conda.yml
+          activate-environment: dp
+      - name: list packages
+        shell: pwsh
+        run: |
+          conda list
+      - name: run test
+        shell: pwsh
+        run: |
+          conda env list
+          conda activate dp
+          python calculate-desc.py --sequence sequence.txt --type NiMetYes
