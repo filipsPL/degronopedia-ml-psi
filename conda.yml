@@ -1,0 +1,16 @@
+name: dp
+channels:
+  - conda-forge
+  - defaults
+  - main
+dependencies:
+  - conda
+  - python>3.9
+  - pandas
+  - numpy
+  - biopython
+  - peptides
+  - rdkit
+  - matplotlib
+  - seaborn
+  - catboost
