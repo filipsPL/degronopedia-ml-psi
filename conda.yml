@@ -1,6 +1,7 @@
 name: dp
 channels:
   - conda-forge
+  - bioconda
   - defaults
   - main
 dependencies:
