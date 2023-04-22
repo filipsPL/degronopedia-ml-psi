@@ -1,9 +1,9 @@
 Predict Protein Stability Index (PSI) from the sequence
 ================
 
-Program to predict Protein Stability Index (PSI) from the sequence. ML models were developed based on experimental stability datasets for a 24/23-mer covering the N-/C-terminus of the human proteome using the CatBoost regressor. The performance of the final models was evaluated using the testing set and an R2 coefficient, reaching the values of 0.796/0.812 for the N-terminus with initiator methionine cleaved/not cleaved, respectively, and 0.815 for the C-terminus (the highest possible value of R2 coefficient is 1). See the paper for details and the [degronopedia tutorial](https://degronopedia.com/degronopedia/tutorial#ML) for more information.
+Program to predict Protein Stability Index (PSI) from the sequence. ML models were developed based on experimental stability datasets for a 24/23-mer covering the N-/C-terminus of the human proteome using the CatBoost regressor. The performance of the final models was evaluated using the testing set and an R2 coefficient, reaching the values of 0.796/0.812 for the N-terminus with initiator methionine cleaved/not cleaved, respectively, and 0.815 for the C-terminus (the highest possible value of R2 coefficient is 1). See the paper for details and the DEGRONOPEDIA [Tutorial](https://degronopedia.com/degronopedia/tutorial#ML) for more information.
 
-The web version of this tool (and much more!) is available at: [https://degronopedia.com/](https://degronopedia.com/) which is a web server for screening for degron motifs and providing insights into the possible degradation of your favorite proteins by the ubiquitin-proteasome system. 
+The web version of this tool (and much more!) is available at: [https://degronopedia.com/](https://degronopedia.com) which is a web server for screening for degron motifs and providing insights into the possible degradation of your favorite proteins by the ubiquitin-proteasome system. 
 
 [![action status](https://github.com/filipsPL/degronopedia-ml-psi/actions/workflows/thefirst.yml/badge.svg)](https://github.com/filipsPL/degronopedia-ml-psi/actions/workflows/thefirst.yml)
 
