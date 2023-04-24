@@ -7,6 +7,8 @@ The web version of this tool (and much more!) is available at: [https://degronop
 
 [![action status](https://github.com/filipsPL/degronopedia-ml-psi/actions/workflows/thefirst.yml/badge.svg)](https://github.com/filipsPL/degronopedia-ml-psi/actions/workflows/thefirst.yml) Tested for python versions 3.8, 3.9, 3.10, and 3.11.
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7858317.svg)](https://doi.org/10.5281/zenodo.7858317)
+
 - [Predict Protein Stability Index (PSI) from the sequence](#predict-protein-stability-index-psi-from-the-sequence)
   - [Set up](#set-up)
   - [Usage](#usage)
