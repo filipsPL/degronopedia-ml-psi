@@ -11,6 +11,7 @@ The web version of this tool (and much more!) is available at: [https://degronop
   - [Set up](#set-up)
   - [Usage](#usage)
   - [Interpretation](#interpretation)
+  - [Tests](#tests)
   - [Authors](#authors)
   - [How to cite](#how-to-cite)
 
@@ -54,8 +55,6 @@ Output will be:
 
 ```text
 N-terminus with initiator Met NOT cleaved
-[2023-04-21 15:21:00] Predicting...
-[2023-04-21 15:21:00] Predicting done.
 Predicted PSI: 5.24
 ```
 
@@ -64,6 +63,10 @@ Predicted PSI: 5.24
 Predictions are made based on the datasets of experimental PSI values, which describe the stability of protein N-/C-terminus in an artificial system where 23-mers covering the termini of nearly entire human proteome were conjugated to GFP protein, and their stability was measured relative to the stability of DsRed protein translated from the same transcript using the Global Protein Stability (GPS) high-throughput technique (Koren et al., 2018 and Timms et al., 2019). Therefore, these values provide insight into the stability of the N-/C-terminus of the query but to a limited extent. Several peptides with low PSI values were experimentally validated to be degraded by the cullin-RING E3 ligase complexes by the authors of the aforementioned GPS studies. However, medium or higher PSI values do not rule out the regulation of such termini by N-/C-degron pathways, as other factors may influence this, including tissue specificity, posttranslational modifications, stress conditions, etc.
 
 **As the ML training set consist of human peptides, we recommend to run the PSI prediction for sequences from higher mammals only.**
+
+## Tests
+
+To run tests on sample sequences, execute `tests.sh`.
 
 ## Authors
 
