@@ -5,7 +5,7 @@ Program to  calculate Protein Stability Index from the sequence. ML models were 
 
 The web version of this tool (and more!) is available at: [https://degronopedia.com/](https://degronopedia.com/).
 
-[![action status](https://github.com/filipsPL/degronopedia-ml-psi/actions/workflows/thefirst.yml/badge.svg)](https://github.com/filipsPL/degronopedia-ml-psi/actions/workflows/thefirst.yml)
+[![action status](https://github.com/filipsPL/degronopedia-ml-psi/actions/workflows/thefirst.yml/badge.svg)](https://github.com/filipsPL/degronopedia-ml-psi/actions/workflows/thefirst.yml) Tested for python versions 3.8, 3.9, 3.10, and 3.11.
 
 - [Calculate PSI from the sequence](#calculate-psi-from-the-sequence)
   - [Set up](#set-up)
