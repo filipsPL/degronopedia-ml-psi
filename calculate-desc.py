@@ -6,11 +6,9 @@ import numpy as np
 from Bio.SeqUtils.ProtParam import ProteinAnalysis
 import peptides
 from rdkit.Chem import AllChem
-from rdkit.Chem import Descriptors
+# from rdkit.Chem import Descriptors
 from rdkit.ML.Descriptors import MoleculeDescriptors
 from rdkit import DataStructs
-# import matplotlib.pyplot as plt
-# from matplotlib.patches import Rectangle
 
 import seaborn as sns
 
@@ -18,15 +16,11 @@ import numpy as np
 import pandas as pd
 import argparse
 
-import logging
-
-from catboost import CatBoostRegressor, Pool
+from catboost import CatBoostRegressor
 
 # sequence="MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDIEQWFTEDPGPDEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQKTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRT"
 
 columnSet = "^Whole_.*|^Ogryzek4_.*‎"
-
-logging.basicConfig(format='[%(asctime)s] %(message)s', datefmt='%Y-%m-%d %H:%M:%S', level=logging.INFO)
 
 nBits = 128
 
@@ -259,6 +253,7 @@ if __name__ == "__main__":
     if type == 'C':
         seq2 = sequence[-23:]
     elif sequence[0] == 'M':
+        print("The sequence contains M at the first position")
         seq2 = sequence[1:24]
     else:
         seq2 = sequence[:23]
@@ -281,10 +276,7 @@ if __name__ == "__main__":
 
     # preds
     X = X[reg.feature_names_]
-
-    logging.info("Predicting...")
     preds = reg.predict(X)
-    logging.info("Predicting done.")
 
     print("Predicted PSI: %.2f" % (preds[0]))
 
