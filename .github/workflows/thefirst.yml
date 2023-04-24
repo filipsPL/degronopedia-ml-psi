@@ -38,3 +38,4 @@ jobs:
           python calculate-desc.py --sequence sequence.txt --type C
           python calculate-desc.py --sequence sequence.txt --type NiMetYes
           python calculate-desc.py --sequence sequence.txt --type NiMetNo
+          ./tests.sh
