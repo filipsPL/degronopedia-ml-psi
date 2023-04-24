@@ -1,0 +1,40 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Program to predict Protein Stability Index (PSI) from the sequence.
+message: Program to predict Protein Stability Index (PSI) from the sequence.
+type: software
+authors:
+  - given-names: "Natalia A. Szulc "
+    email: nszulc@iimcb.gov.pl
+    affiliation: >-
+      International Institute of Molecular and Cell
+      Biology in Warsaw, Warsaw, Poland
+    orcid: "https://orcid.org/0000-0002-2991-3634"
+  - orcid: "https://orcid.org/0000-0001-5758-9416"
+    given-names: Filip Stefaniak
+    affiliation: >-
+      International Institute of Molecular and Cell
+      Biology in Warsaw, Warsaw, Poland
+    email: fstefaniak@iimcb.gov.pl
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.7498782
+    description: Zenodo repository
+  - type: url
+    value: >-
+      https://github.com/filipsPL/degronopedia-ml-psi
+    description: GitHub repository
+repository-code: "https://github.com/filipsPL/degronopedia-ml-psi"
+url: "https://github.com/filipsPL/degronopedia-ml-psi"
+abstract: >-
+  Program to predict Protein Stability Index (PSI) from the sequence. ML models were developed based on experimental stability datasets for a 24/23-mer covering the N-/C-terminus of the human proteome using the CatBoost regressor.
+keywords:
+  - bioinformatics
+  - PSI
+  - degrons
+  - machine learning
+  - catboost
+license: Apache-2.0
