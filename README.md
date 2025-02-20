@@ -76,4 +76,4 @@ Szulc, N. A., Stefaniak, F.
 
 ## How to cite
 
-Szulc, N. A., Stefaniak, F., Piechota, M., Cappannini, A., Bujnicki, J. M., & Pokrzywa, W. (2022). DEGRONOPEDIA - a web server for proteome-wide inspection of degrons. bioRxiv. <https://doi.org/10.1101/2022.05.19.492622>
+Szulc, N. A., Stefaniak, F., Piechota, M., Soszyńska, A., Piórkowska, G., Cappannini, A., Bujnicki, J. M., Maniaci, C., & Pokrzywa, W. (2024). DEGRONOPEDIA: A web server for proteome-wide inspection of degrons. Nucleic Acids Research, 52(W1), W221–W232. https://doi.org/10.1093/nar/gkae238
