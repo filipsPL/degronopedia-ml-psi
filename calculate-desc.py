@@ -15,6 +15,7 @@ import seaborn as sns
 import numpy as np
 import pandas as pd
 import argparse
+import os
 
 from catboost import CatBoostRegressor
 
@@ -271,8 +272,9 @@ if __name__ == "__main__":
     # set up the regressor
     reg = CatBoostRegressor()
 
-    # read model file
-    reg.load_model("models/%s" % (modelFile), format='cbm')
+    # read model file regardless of the working directory
+    model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "models", modelFile)
+    reg.load_model(model_path, format='cbm')
 
     # preds
     X = X[reg.feature_names_]
